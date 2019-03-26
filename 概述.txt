@@ -2,3 +2,10 @@
 2、交给rx_handler处理，例如OVS、linux bridge等；
 3、ptype_all处理，例如抓包程序、raw socket等；
 4、ptype_base处理，交给协议栈处理，例如ip、arp、rarp等；
+
+
+
+bridge :
+br_add_if -> netdev_rx_handler_register (regist : br_handle_frame)
+
+__netif_receive_skb_core -> br_handle_frame
