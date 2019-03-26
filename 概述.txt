@@ -1,0 +1,4 @@
+1、vlan报文的处理，主要是循环把vlan头剥掉，如果qinq场景，两个vlan都会被剥掉；
+2、交给rx_handler处理，例如OVS、linux bridge等；
+3、ptype_all处理，例如抓包程序、raw socket等；
+4、ptype_base处理，交给协议栈处理，例如ip、arp、rarp等；
